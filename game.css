@@ -1,0 +1,145 @@
+html,body {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scroll 70s linear infinite;
+        background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"), #111111;
+}
+@keyframes scroll {
+    100% {
+        background-position: 0px -3000px;
+    }
+}
+@media (prefers-reduced-motion) {
+    .wrapper {
+        animation: scroll 2000s linear infinite;
+    }
+}
+@media (min-width: 670px) {
+    .title {
+        font-size: 5rem;
+    }
+}
+
+.container{
+    width: 600px;
+    margin-top: 20%;
+    position: relative;
+    padding: 25px 50px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.container h1 {
+    font-size: 40px;
+    width: 21.5ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid #212121;
+    animation: cursor 1s step-start infinite,
+            text 5s steps(25) alternate infinite;
+}
+@keyframes cursor {
+
+    0%,
+    100% {
+        border-color: #212121;
+    }
+    
+}
+@keyframes text {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 22ch;
+    }
+}
+.inputArea {
+    display: flex;
+    position: relative;
+    margin-top: 50px;
+}
+.inputArea label{
+    font-size: 24px;
+}
+.inputArea input.guessField{
+    margin-left: 14px;
+    padding: 10px 66px 10px 14px;
+    border: 1px solid;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.inputArea input.guessField:focus{
+    outline: none;
+}
+
+input::-webkit-inner-spin-button, 
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.inputArea input.btn {
+    right: 0;
+    border: none;
+    font-weight: 600;
+    text-align: right;
+    position: absolute;
+    padding: 10px 30px;
+    letter-spacing: 1px;
+    font-family: monospace;
+    background-color: rgb(41, 253, 182);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.resultArea {
+    /* width: 80%; */
+    margin: 30px 0px;
+}
+.resultArea .card {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.cardDetail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cardDetail .lastResult {
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+    width: max-content;
+}
+.cardDetail .lowOrHi {
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 999px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+button {
+    border: none;
+    bottom: 50px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    position: absolute;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    font-family: monospace;
+    background-color: rgb(7, 208, 141);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.btn:disabled{
+    border: none;
+    color: black;
+    cursor: not-allowed;
+    background-color: gray;
+}
+.guessField:disabled{
+    cursor: not-allowed;
+}
